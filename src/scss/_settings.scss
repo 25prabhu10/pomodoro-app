@@ -1,0 +1,16 @@
+.settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3.5em;
+  cursor: pointer;
+
+  svg {
+    width: 2rem;
+    fill: #7b809e;
+  }
+
+  svg:hover {
+    fill: $color-tertiary;
+  }
+}

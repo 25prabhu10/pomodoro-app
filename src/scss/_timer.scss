@@ -1,0 +1,55 @@
+.timer {
+  margin: 3rem auto;
+  width: 15rem;
+  height: 15rem;
+  position: relative;
+
+  &__progress {
+    transform: rotate(-90deg);
+    border-radius: 100%;
+    background-color: $color-dark-blue;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    margin: auto;
+    fill: transparent;
+    stroke: $color-tertiary;
+    animation-name: minutes;
+    animation-duration: 60s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    stroke-dasharray: 691;
+    stroke-dashoffset: 691;
+    stroke-linecap: round;
+  }
+
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    &-heading {
+      font-size: 4rem;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes minutes {
+  0% {
+    stroke-dashoffset: 691;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
