@@ -1,0 +1,23 @@
+{
+  "name": "pomodoro-app",
+  "version": "1.0.0",
+  "description": "Solving challenge from frontendmentor.io",
+  "main": "src/js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/25prabhu10/pomodoro-app.git"
+  },
+  "keywords": [
+    "pomodoro",
+    "timer"
+  ],
+  "author": "Prabhu Hiremath",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/25prabhu10/pomodoro-app/issues"
+  },
+  "homepage": "https://github.com/25prabhu10/pomodoro-app#readme"
+}
