@@ -1,7 +1,6 @@
 .timer {
-  margin: 3rem auto;
-  width: 15rem;
-  height: 15rem;
+  margin-top: 3em;
+  margin-bottom: 2em;
   position: relative;
 
   &__progress {
@@ -17,12 +16,25 @@
     stroke: $color-tertiary;
     animation-name: minutes;
     animation-duration: 60s;
+    animation-timing-function: linear;
     animation-delay: 0s;
     animation-iteration-count: infinite;
     animation-direction: normal;
-    stroke-dasharray: 691;
-    stroke-dashoffset: 691;
+    stroke-dasharray: 911.062;
+    stroke-dashoffset: 911.062;
     stroke-linecap: round;
+    stroke-width: 10;
+
+    // @include breakpoint-up(medium) {
+    //   width: 450px;
+    //   height: 450px;
+
+    //   // circle {
+    //   //   cx: 225;
+    //   //   cy: 225;
+    //   //   r: 210;
+    //   // }
+    // }
   }
 
   &__text {
@@ -34,6 +46,15 @@
 
     &-heading {
       font-size: 4rem;
+    }
+
+    &-start {
+      cursor: pointer;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $color-tertiary;
+      }
     }
   }
 
@@ -47,7 +68,7 @@
 
 @keyframes minutes {
   0% {
-    stroke-dashoffset: 691;
+    stroke-dashoffset: 911.062;
   }
   100% {
     stroke-dashoffset: 0;

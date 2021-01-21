@@ -1,6 +1,8 @@
+@import "./mixins";
+@import "./variables";
+
 @import "./vendors/normalize";
 
-@import "./variables";
 @import "./globals";
 @import "./buttons";
 @import "./header";

@@ -1,6 +1,4 @@
 .button {
-  padding: 1.125em 1.625em;
-  border-radius: 2rem;
   outline: none;
   background-color: $color-tertiary;
   color: $color-primary;
@@ -9,8 +7,6 @@
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.8em;
-    padding: 0.2em;
-    padding-left: 0.8em;
 
     &:hover {
       color: $color-tertiary;
