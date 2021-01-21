@@ -9,6 +9,10 @@ html {
   box-sizing: inherit;
 }
 
+::selection {
+  background-color: $color-tertiary;
+}
+
 body {
   margin: 0;
   padding: 0;
