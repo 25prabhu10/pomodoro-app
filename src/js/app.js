@@ -1,7 +1,10 @@
 import { startBtn, pauseBtn, stopBtn, svgCircle } from "./elements";
-import { resetTimer, startTimer, pauseTimer, stopTimer } from "./timer";
+import { startTimer, pauseTimer, stopTimer } from "./timer";
+import { setPomodoroMinutes } from "./tabs";
 
-window.addEventListener("load", () => resetTimer());
+window.addEventListener("load", () => {
+  setPomodoroMinutes();
+});
 
 startBtn.addEventListener("click", () => {
   svgCircle.style.animationPlayState = "running";

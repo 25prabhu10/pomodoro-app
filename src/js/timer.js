@@ -2,26 +2,28 @@ import { minutes, seconds } from "./elements";
 import { formatTimeString } from "./util";
 
 let interval;
-let state = "stopped";
+let globalMinutes;
 
-let tempSeconds = 59;
-let tempMinutes = 25;
+let state = "stopped";
 
 const resetSeconds = () => {
   seconds.innerHTML = "00";
 };
 
 const resetMinutes = () => {
-  minutes.innerHTML = "25";
+  minutes.innerHTML = globalMinutes;
 };
 
 const timer = () => {
+  let tempSeconds = 59;
+  let tempMinutes = globalMinutes;
+
   interval = setInterval(function () {
     if (state === "running") {
       seconds.innerHTML = formatTimeString(tempSeconds);
       tempSeconds = tempSeconds - 1;
 
-      if (tempSeconds < 0) {
+      if (tempSeconds < 55) {
         resetSeconds();
         tempSeconds = 59;
         tempMinutes = tempMinutes - 1;
@@ -35,6 +37,11 @@ const timer = () => {
       }
     }
   }, 1000);
+};
+
+export const setMinutes = (min) => {
+  globalMinutes = min;
+  resetTimer();
 };
 
 export const resetTimer = () => {
