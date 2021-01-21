@@ -23,7 +23,7 @@ const timer = () => {
       seconds.innerHTML = formatTimeString(tempSeconds);
       tempSeconds = tempSeconds - 1;
 
-      if (tempSeconds < 55) {
+      if (tempSeconds < 0) {
         resetSeconds();
         tempSeconds = 59;
         tempMinutes = tempMinutes - 1;
