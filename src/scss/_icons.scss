@@ -1,0 +1,17 @@
+.icon {
+  cursor: pointer;
+
+  svg {
+    width: 2rem;
+
+    @media (hover: hover) {
+      &:hover {
+        fill: $color-tertiary;
+      }
+    }
+
+    &:active {
+      fill: $color-tertiary;
+    }
+  }
+}

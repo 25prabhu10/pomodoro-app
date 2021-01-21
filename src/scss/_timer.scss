@@ -14,27 +14,10 @@
     margin: auto;
     fill: transparent;
     stroke: $color-tertiary;
-    animation-name: minutes;
-    animation-duration: 60s;
-    animation-timing-function: linear;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-    animation-direction: normal;
     stroke-dasharray: 911.062;
     stroke-dashoffset: 911.062;
     stroke-linecap: round;
     stroke-width: 10;
-
-    // @include breakpoint-up(medium) {
-    //   width: 450px;
-    //   height: 450px;
-
-    //   // circle {
-    //   //   cx: 225;
-    //   //   cy: 225;
-    //   //   r: 210;
-    //   // }
-    // }
   }
 
   &__text {
@@ -45,7 +28,11 @@
     text-align: center;
 
     &-heading {
-      font-size: 4rem;
+      font-size: 4.5rem;
+
+      @include breakpoint-up(medium) {
+        font-size: 5.5rem;
+      }
     }
 
     &-start {
@@ -59,11 +46,27 @@
   }
 
   &__button {
+    display: flex;
     position: absolute;
-    top: 75%;
+    align-items: center;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    svg {
+      fill: $color-secondary;
+    }
   }
+}
+
+.animate-clock {
+  animation-name: minutes;
+  animation-play-state: paused;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
 }
 
 @keyframes minutes {

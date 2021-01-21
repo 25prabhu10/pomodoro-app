@@ -1,54 +1,64 @@
-let hours = document.getElementById("hours");
-let minutes = document.getElementById("minutes");
-let timerBtn = document.getElementById("timer-operation");
-let svgCircle = document.querySelector(".timer__progress");
+import { minutes, seconds } from "./elements";
+import { formatTimeString } from "./util";
 
-timerBtn.innerHTML = "start";
-svgCircle.style.animationPlayState = "paused";
+let interval;
+let state = "stopped";
 
-timerBtn.addEventListener("click", () => {
-  if (timerBtn.innerHTML === "start") {
-    svgCircle.style.animationPlayState = "running";
-    startTimer();
-    timerBtn.innerHTML = "pause";
-  }
-});
+let tempSeconds = 59;
+let tempMinutes = 25;
+
+const resetSeconds = () => {
+  seconds.innerHTML = "00";
+};
 
 const resetMinutes = () => {
-  minutes.innerHTML = "00";
+  minutes.innerHTML = "25";
 };
 
-const resetHours = () => {
-  hours.innerHTML = "00";
-};
+const timer = () => {
+  interval = setInterval(function () {
+    if (state === "running") {
+      seconds.innerHTML = formatTimeString(tempSeconds);
+      tempSeconds = tempSeconds - 1;
 
-const resetTimer = () => {
-  resetMinutes();
-  resetHours();
-};
+      if (tempSeconds < 0) {
+        resetSeconds();
+        tempSeconds = 59;
+        tempMinutes = tempMinutes - 1;
+        minutes.innerHTML = formatTimeString(tempMinutes);
+      }
 
-const startTimer = () => {
-  resetTimer();
-  let tempMinutes = 1;
-  let tempHours = 1;
-
-  setInterval(function () {
-    minutes.innerHTML = tempMinutes < 10 ? `0${tempMinutes}` : tempMinutes;
-    tempMinutes = tempMinutes + 1;
-
-    if (tempMinutes > 59) {
-      resetMinutes();
-      tempMinutes = 1;
-      tempHours = tempHours + 1;
-      hours.innerHTML = tempHours < 10 ? `0${tempHours}` : tempHours;
-    }
-
-    if (tempHours > 23) {
-      tempHours = 1;
-      tempMinutes = 1;
-      hours.innerHTML = tempHours < 10 ? `0${tempHours}` : tempHours;
+      if (tempMinutes < 0) {
+        tempMinutes = 59;
+        tempSeconds = 59;
+        minutes.innerHTML = formatTimeString(tempMinutes);
+      }
     }
   }, 1000);
-  //   60000
-  //   3600000
+};
+
+export const resetTimer = () => {
+  resetSeconds();
+  resetMinutes();
+};
+
+export const startTimer = () => {
+  if (state === "stopped") {
+    state = "running";
+    resetTimer();
+    timer();
+  } else if (state === "paused") {
+    state = "running";
+  }
+};
+
+export const pauseTimer = () => {
+  state = "paused";
+};
+
+export const stopTimer = () => {
+  state = "stopped";
+  clearInterval(interval);
+  interval = false;
+  resetTimer();
 };
