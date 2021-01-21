@@ -1,5 +1,5 @@
 import { minutes, seconds } from './elements';
-import { formatTimeString } from './util';
+import util from './util';
 
 let interval;
 let globalMinutes;
@@ -18,38 +18,38 @@ const timer = () => {
   let tempSeconds = 59;
   let tempMinutes = globalMinutes;
 
-  interval = setInterval(function () {
+  interval = setInterval(() => {
     if (state === 'running') {
-      seconds.innerHTML = formatTimeString(tempSeconds);
-      tempSeconds = tempSeconds - 1;
+      seconds.innerHTML = util.formatTimeString(tempSeconds);
+      tempSeconds -= 1;
 
       if (tempSeconds < 0) {
         resetSeconds();
         tempSeconds = 59;
-        tempMinutes = tempMinutes - 1;
-        minutes.innerHTML = formatTimeString(tempMinutes);
+        tempMinutes -= 1;
+        minutes.innerHTML = util.formatTimeString(tempMinutes);
       }
 
       if (tempMinutes < 0) {
         tempMinutes = 59;
         tempSeconds = 59;
-        minutes.innerHTML = formatTimeString(tempMinutes);
+        minutes.innerHTML = util.formatTimeString(tempMinutes);
       }
     }
   }, 1000);
 };
 
-export const setMinutes = (min) => {
-  globalMinutes = min;
-  resetTimer();
-};
-
-export const resetTimer = () => {
+const resetTimer = () => {
   resetSeconds();
   resetMinutes();
 };
 
-export const startTimer = () => {
+const setMinutes = (min) => {
+  globalMinutes = min;
+  resetTimer();
+};
+
+const startTimer = () => {
   if (state === 'stopped') {
     state = 'running';
     resetTimer();
@@ -59,13 +59,15 @@ export const startTimer = () => {
   }
 };
 
-export const pauseTimer = () => {
+const pauseTimer = () => {
   state = 'paused';
 };
 
-export const stopTimer = () => {
+const stopTimer = () => {
   state = 'stopped';
   clearInterval(interval);
   interval = false;
   resetTimer();
 };
+
+export { resetTimer, setMinutes, startTimer, pauseTimer, stopTimer };

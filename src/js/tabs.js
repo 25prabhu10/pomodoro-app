@@ -6,6 +6,18 @@ import {
   svgCircle,
 } from './elements';
 
+const setPomodoroMinutes = () => {
+  setMinutes(25);
+};
+
+const setShortBreak = () => {
+  setMinutes(5);
+};
+
+const setLongBreak = () => {
+  setMinutes(10);
+};
+
 pomodoroBtn.addEventListener('click', () => {
   pomodoroBtn.classList.add('button');
   longBreakBtn.classList.remove('button');
@@ -30,14 +42,4 @@ longBreakBtn.addEventListener('click', () => {
   setLongBreak();
 });
 
-export const setPomodoroMinutes = () => {
-  setMinutes(25);
-};
-
-export const setShortBreak = () => {
-  setMinutes(5);
-};
-
-export const setLongBreak = () => {
-  setMinutes(10);
-};
+export { setPomodoroMinutes, setShortBreak, setLongBreak };
