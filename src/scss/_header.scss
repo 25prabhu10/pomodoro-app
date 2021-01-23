@@ -2,6 +2,7 @@
   margin: 1em;
 
   @include breakpoint-up(medium) {
+    margin-top: 0em;
     font-size: 3rem;
   }
 }

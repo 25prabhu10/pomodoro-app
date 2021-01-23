@@ -2,24 +2,15 @@
   outline: none;
   background-color: $color-tertiary;
   color: $color-primary;
+  transition: all 0.5s ease;
 
-  &__basic {
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    letter-spacing: 0.8em;
-    margin-right: -0.8em;
-    color: $color-secondary;
-
-    @media (hover: hover) {
-      &:hover {
-        color: $color-tertiary;
-      }
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: 0 0 2px 5px rgba(242, 114, 114, 0.5);
     }
+  }
 
-    &:active {
-      color: $color-tertiary;
-      transition: all 200 ease-in-out;
-      transform: scaleX(0.9);
-    }
+  &:active {
+    transform: scale(0.9);
   }
 }

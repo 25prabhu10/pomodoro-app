@@ -1,12 +1,13 @@
-@import "./mixins";
-@import "./variables";
-@import "./util";
+@import './mixins';
+@import './variables';
+@import './util';
 
-@import "./vendors/normalize";
+@import './vendors/normalize';
 
-@import "./globals";
-@import "./buttons";
-@import "./header";
-@import "./tabs";
-@import "./timer";
-@import "./icons";
+@import './globals';
+@import './buttons';
+@import './icons';
+@import './header';
+@import './tabs';
+@import './timer';
+@import './settings';

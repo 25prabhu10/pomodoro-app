@@ -1,6 +1,7 @@
 import { startBtn, pauseBtn, stopBtn, svgCircle } from './elements';
 import { startTimer, pauseTimer, stopTimer } from './timer';
 import { setPomodoroMinutes } from './tabs';
+import './settings';
 
 window.addEventListener('load', () => {
   setPomodoroMinutes();

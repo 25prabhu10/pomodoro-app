@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="scss/main.scss" />
     <title>Pomodoro App</title>
   </head>
+
   <body class="container">
     <header>
       <h1 class="title">pomodoro</h1>
@@ -56,7 +57,6 @@
             <div id="stop" class="icon hidden">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
                 <path
-                  class="cls-1"
                   d="M56,64H8a8,8,0,0,1-8-8V8A8,8,0,0,1,8,0H56a8,8,0,0,1,8,8V56A8,8,0,0,1,56,64ZM8,5.33A2.68,2.68,0,0,0,5.33,8V56A2.68,2.68,0,0,0,8,58.67H56A2.68,2.68,0,0,0,58.67,56V8A2.68,2.68,0,0,0,56,5.33Z"
                 />
               </svg>
@@ -65,12 +65,108 @@
         </div>
       </section>
       <section>
-        <div class="icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-            <path
-              d="M500.6 212.6l-59.9-14.7c-3.3-10.5-7.5-20.7-12.6-30.6l30.6-51c3.6-6 2.7-13.5-2.1-18.3L414 55.4c-4.8-4.8-12.3-5.7-18.3-2.1l-51 30.6c-9.9-5.1-20.1-9.3-30.6-12.6l-14.4-59.9C297.9 4.8 291.9 0 285 0h-60c-6.9 0-12.9 4.8-14.7 11.4l-14.4 59.9c-10.5 3.3-20.7 7.5-30.6 12.6l-51-30.6c-6-3.6-13.5-2.7-18.3 2.1L53.4 98c-4.8 4.8-5.7 12.3-2.1 18.3l30.6 51c-5.1 9.9-9.3 20.1-12.6 30.6l-57.9 14.7C4.8 214.1 0 220.1 0 227v60c0 6.9 4.8 12.9 11.4 14.4l57.9 14.7c3.3 10.5 7.5 20.7 12.6 30.6l-30.6 51c-3.6 6-2.7 13.5 2.1 18.3L96 458.6c4.8 4.8 12.3 5.7 18.3 2.1l51-30.6c9.9 5.1 20.1 9.3 30.6 12.6l14.4 57.9c1.8 6.6 7.8 11.4 14.7 11.4h60c6.9 0 12.9-4.8 14.7-11.4l14.4-57.9c10.5-3.3 20.7-7.5 30.6-12.6l51 30.6c6 3.6 13.5 2.7 18.3-2.1l42.6-42.6c4.8-4.8 5.7-12.3 2.1-18.3l-30.6-51c5.1-9.9 9.3-20.1 12.6-30.6l59.9-14.7c6.6-1.5 11.4-7.5 11.4-14.4v-60c0-6.9-4.8-12.9-11.4-14.4zM255 332c-41.4 0-75-33.6-75-75s33.6-75 75-75 75 33.6 75 75-33.6 75-75 75z"
-            />
-          </svg>
+        <div class="settings">
+          <div id="settingsBtn" class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path
+                d="M500.6 212.6l-59.9-14.7c-3.3-10.5-7.5-20.7-12.6-30.6l30.6-51c3.6-6 2.7-13.5-2.1-18.3L414 55.4c-4.8-4.8-12.3-5.7-18.3-2.1l-51 30.6c-9.9-5.1-20.1-9.3-30.6-12.6l-14.4-59.9C297.9 4.8 291.9 0 285 0h-60c-6.9 0-12.9 4.8-14.7 11.4l-14.4 59.9c-10.5 3.3-20.7 7.5-30.6 12.6l-51-30.6c-6-3.6-13.5-2.7-18.3 2.1L53.4 98c-4.8 4.8-5.7 12.3-2.1 18.3l30.6 51c-5.1 9.9-9.3 20.1-12.6 30.6l-57.9 14.7C4.8 214.1 0 220.1 0 227v60c0 6.9 4.8 12.9 11.4 14.4l57.9 14.7c3.3 10.5 7.5 20.7 12.6 30.6l-30.6 51c-3.6 6-2.7 13.5 2.1 18.3L96 458.6c4.8 4.8 12.3 5.7 18.3 2.1l51-30.6c9.9 5.1 20.1 9.3 30.6 12.6l14.4 57.9c1.8 6.6 7.8 11.4 14.7 11.4h60c6.9 0 12.9-4.8 14.7-11.4l14.4-57.9c10.5-3.3 20.7-7.5 30.6-12.6l51 30.6c6 3.6 13.5 2.7 18.3-2.1l42.6-42.6c4.8-4.8 5.7-12.3 2.1-18.3l-30.6-51c5.1-9.9 9.3-20.1 12.6-30.6l59.9-14.7c6.6-1.5 11.4-7.5 11.4-14.4v-60c0-6.9-4.8-12.9-11.4-14.4zM255 332c-41.4 0-75-33.6-75-75s33.6-75 75-75 75 33.6 75 75-33.6 75-75 75z"
+              />
+            </svg>
+          </div>
+          <div id="modal" class="modal-container hidden">
+            <div id="settings-modal" class="modal-content">
+              <header class="modal-header">
+                <h3>Settings</h3>
+                <div id="closeModal" class="icon modal-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <line
+                      x1="0"
+                      y1="0"
+                      x2="24"
+                      y2="24"
+                      style="stroke: #656980; stroke-width: 5"
+                    />
+                    <line
+                      x1="24"
+                      y1="0"
+                      x2="0"
+                      y2="24"
+                      style="stroke: #656980; stroke-width: 5"
+                    />
+                  </svg>
+                </div>
+              </header>
+              <hr />
+              <article class="modal-options">
+                <div class="modal-options-time">
+                  <h4 class="modal-options-time__head">TIME (MINUTES)</h4>
+                  <div class="modal-options-time__input">
+                    <label
+                      for="pomodoroMinutes"
+                      class="modal-options-time__input-label"
+                    >
+                      pomodoro
+                    </label>
+                    <input
+                      type="number"
+                      id="pomodoroMinutes"
+                      name="shortBreakMinutes"
+                      autocomplete="off"
+                      min="1"
+                      max="59"
+                      value="25"
+                      autofocus
+                      required
+                      class="modal-options-time__input-box"
+                    />
+                  </div>
+                  <div class="modal-options-time__input">
+                    <label
+                      for="shortBreakMinutes"
+                      class="modal-options-time__input-label"
+                    >
+                      short break
+                    </label>
+                    <input
+                      type="number"
+                      name="shortBreakMinutes"
+                      id="shortBreakMinutes"
+                      autocomplete="off"
+                      min="1"
+                      max="59"
+                      value="5"
+                      required
+                      class="modal-options-time__input-box"
+                    />
+                  </div>
+                  <div class="modal-options-time__input">
+                    <label
+                      for="longBreakMinutes"
+                      class="modal-options-time__input-label"
+                    >
+                      long break
+                    </label>
+                    <input
+                      type="number"
+                      name="longBreakMinutes"
+                      id="longBreakMinutes"
+                      autocomplete="off"
+                      min="1"
+                      max="59"
+                      value="10"
+                      required
+                      class="modal-options-time__input-box"
+                    />
+                  </div>
+                </div>
+                <div class="modal-options__apply">
+                  <button id="applySettings" class="button modal-options__btn">
+                    apply
+                  </button>
+                </div>
+              </article>
+            </div>
+          </div>
         </div>
       </section>
     </main>

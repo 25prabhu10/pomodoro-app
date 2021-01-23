@@ -1,0 +1,176 @@
+.settings {
+  margin-top: 1em;
+
+  #settingsBtn svg {
+    fill: $color-secondary-50;
+    transition: transform 0.5s ease;
+
+    @media (hover: hover) {
+      &:hover {
+        fill: $color-tertiary;
+      }
+    }
+
+    &:active {
+      fill: $color-tertiary;
+      transform: rotate(180deg);
+    }
+
+    @include breakpoint-up(medium) {
+      width: 40px;
+      height: 40px;
+      margin-top: 3em;
+    }
+  }
+
+  @include breakpoint-up(medium) {
+    margin-top: 3em;
+  }
+}
+
+.modal {
+  &-container {
+    position: fixed;
+
+    &:before {
+      content: '';
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1040;
+      background-color: $color-dark-50;
+    }
+  }
+
+  &-icon svg {
+    width: 1em;
+
+    // @include breakpoint-up(medium) {
+    //   width: 1.3em;
+    // }
+  }
+
+  &-content {
+    background-color: $color-white;
+    color: $color-dark-blue;
+    border-radius: 0.75em;
+    visibility: hidden;
+    position: fixed;
+    z-index: 1041;
+    left: 50%;
+    top: 50%;
+    width: 90vw;
+    height: 70vh;
+    transform: translate(-50%, 200%);
+    animation: slideUp 0.5s ease forwards;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5em;
+
+    h3 {
+      font-size: 1.3rem;
+      margin: 0;
+
+      @include breakpoint-up(medium) {
+        font-size: 1.75rem;
+      }
+    }
+
+    @include breakpoint-up(medium) {
+      padding: 3em;
+    }
+  }
+
+  &-options {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+    padding: 0 1.5em;
+
+    &-time {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 1em;
+
+      &__head {
+        font-weight: 500;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+      }
+
+      &__input {
+        display: flex;
+        align-items: center;
+        margin: 1em 0;
+
+        &-label {
+          flex-grow: 1;
+          color: $color-gray;
+        }
+
+        &-box {
+          width: 50%;
+          background-color: $color-secondary-50;
+          padding: 0.5em 1em;
+          line-height: 1.5em;
+          border: none;
+          border-radius: 0.5em;
+        }
+      }
+    }
+
+    &__apply {
+      position: absolute;
+      bottom: -3em;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: auto;
+      margin-bottom: 1em;
+    }
+
+    &__btn {
+      font-size: 1rem;
+      text-align: center;
+      text-transform: capitalize;
+      width: 10em;
+    }
+  }
+}
+
+.hide {
+  animation: hide 0.5s ease forwards;
+}
+
+@keyframes slideUp {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(-50%, 200%);
+  }
+
+  70% {
+    transform: translate(-50%, -55%);
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes hide {
+  0% {
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}

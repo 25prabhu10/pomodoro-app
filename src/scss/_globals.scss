@@ -28,7 +28,7 @@ header {
 button {
   font-size: 0.8rem;
   background-color: transparent;
-  color: $color-light-gray;
+  color: $color-gray;
   border: none;
   outline: none;
   padding: 1.125em 1.625em;
@@ -38,6 +38,11 @@ button {
   @include breakpoint-up(medium) {
     font-size: 1.1rem;
   }
+}
+
+hr {
+  opacity: 0.5;
+  border-top: 2px solid $color-primary;
 }
 
 .container {
@@ -56,7 +61,7 @@ button {
   align-items: center;
 
   @include breakpoint-up(medium) {
-    width: 30rem;
+    width: 40rem;
   }
 }
 

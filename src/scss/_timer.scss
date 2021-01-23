@@ -34,15 +34,6 @@
         font-size: 5.5rem;
       }
     }
-
-    &-start {
-      cursor: pointer;
-      text-transform: uppercase;
-
-      &:hover {
-        color: $color-tertiary;
-      }
-    }
   }
 
   &__button {
@@ -56,6 +47,11 @@
     svg {
       fill: $color-secondary;
     }
+  }
+
+  @include breakpoint-up(medium) {
+    margin-top: 7em;
+    transform: scale(1.2);
   }
 }
 
